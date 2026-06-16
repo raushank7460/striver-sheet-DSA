@@ -19,6 +19,7 @@ public class sumOfPrime {
         for(int i=2;i<=100;i++){
             if(isPrime(i)){
                 sum=sum+i;
+                
             }
         }
         System.out.println(sum);
