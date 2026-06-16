@@ -32,3 +32,40 @@ HCF → Biggest number that divides both
 
 // LCM:
 // (a*b)/gcd(a,b)
+---------------------------------------
+RECURSION = Function calling itself
+
+Must Have:
+1. Base Case
+2. Recursive Call
+
+Patterns:
+
+Print N→1
+f(n){
+ if(n==0) return;
+ print(n);
+ f(n-1);
+}
+
+Print 1→N
+f(n){
+ if(n==0) return;
+ f(n-1);
+ print(n);
+}
+
+Factorial
+f(n)=n*f(n-1)
+
+Sum
+f(n)=n+f(n-1)
+
+Power
+f(a,b)=a*f(a,b-1)
+
+Fibonacci
+fib(n)=fib(n-1)+fib(n-2)
+
+Interview Formula:
+Base Case + Smaller Problem = Recursion
