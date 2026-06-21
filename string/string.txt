@@ -1,0 +1,33 @@
+String = Immutable sequence of characters
+
+length()          -> Length
+charAt(i)         -> Access character
+substring()       -> Extract part
+equals()          -> Compare content
+compareTo()       -> Lexicographical compare
+indexOf()         -> First occurrence
+lastIndexOf()     -> Last occurrence
+contains()        -> Check presence
+replace()         -> Replace characters
+split()           -> Convert to array
+toCharArray()     -> String → char[]
+new String(arr)   -> char[] → String
+
+StringBuilder:
+append()
+insert()
+delete()
+reverse()
+toString()
+
+DSA Concepts:
+✓ Reverse String
+✓ Palindrome
+✓ Frequency Count
+✓ Anagram
+✓ Two Pointers
+✓ Sliding Window
+✓ Hashing
+✓ KMP
+✓ Rabin-Karp
+✓ Trie
