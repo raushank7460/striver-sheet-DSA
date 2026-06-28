@@ -5,3 +5,44 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/raushank7460/striver-sheet-DSA.git
 git push -u origin main
+
+class Solution {
+    static boolean valid(boolean[][] vis, int r, int c, int n, int[][] maze) {
+        if (r>=0 && r<n && c>=0 && c<n && vis[r][c]==false && maze[r][c]==1) {
+            return true;
+        }    
+        return false;
+    } 
+    
+    public static void solve(int[][]maze,int n,int r, int c,boolean[][]vis,String s,ArrayList<String> ans) {
+        if (r==n-1 && c==n-1) {
+            ans.add(s);
+            return;
+        }
+        vis[r][c] = true;
+        int[] dir = {0, -1, 0, 1, 0};
+        String[] dirName = {"L", "U", "R", "D"};
+        for (int i=0; i<4; i++) {
+            int nr = r + dir[i];
+            int nc = c + dir[i+1];
+            if (valid(vis, nr, nc, n, maze)) {
+                solve(maze, n, nr, nc, vis, s+dirName[i], ans);
+            }
+        }
+        vis[r][c] = false;
+    }
+    
+    public ArrayList<String> ratInMaze(int[][] maze) {
+        
+        // code here
+        
+        ArrayList<String> ans = new ArrayList<>();
+        int n = maze.length;
+        if (maze[0][0]==0 || maze[n-1][n-1]==0) return ans;
+        boolean[][] visited = new boolean[n][n];
+        solve(maze, n, 0, 0, visited, "", ans);
+        Collections.sort(ans);
+        return ans;
+    }
+    
+}
